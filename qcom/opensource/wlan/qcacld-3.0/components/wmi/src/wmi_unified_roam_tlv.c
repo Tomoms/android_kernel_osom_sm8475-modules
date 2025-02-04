@@ -2530,6 +2530,7 @@ extract_roam_sync_frame_event_tlv(wmi_unified_t wmi_handle, void *event,
 	return QDF_STATUS_SUCCESS;
 }
 
+#if 0
 static char *wmi_get_roam_event_reason_string(uint32_t reason)
 {
 	switch (reason) {
@@ -2559,7 +2560,7 @@ static char *wmi_get_roam_event_reason_string(uint32_t reason)
 
 	return "Invalid";
 }
-
+#endif
 static enum roam_reason
 wmi_convert_fw_reason_to_cm_reason(uint32_t reason)
 {
@@ -2906,7 +2907,7 @@ extract_roam_stats_with_single_tlv(wmi_unified_t wmi_handle, uint8_t *evt_buf,
 				   struct roam_stats_event *stats_info)
 {
 	QDF_STATUS status;
-	uint8_t vdev_id = stats_info->vdev_id;
+//	uint8_t vdev_id = stats_info->vdev_id;
 
 	status = wmi_unified_extract_roam_11kv_stats(
 			wmi_handle, evt_buf, &stats_info->data_11kv[0], 0, 0);
